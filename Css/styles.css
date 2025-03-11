@@ -33,5 +33,10 @@ font-size: 25px;
 border-radius: 2px;
     
 }
+select{
+    width:100%;
+    padding: 10px;
+    display: block;
+}
 
 
