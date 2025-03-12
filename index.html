@@ -5,20 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Css/styles.css">
     <title>World Clock-milga Ahmed</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.46/moment-timezone-with-data-1970-2030.min.js"></script>
 </head>
+
 <body>
   <div class="bodyelement">
     <h1>World Clock</h1>
     <div class="watch">
-      <span class="hours">00</span>
+      <span class="hours"></span>
       <span >:</span>
-      <span class="minutes">00</span>
+      <span class="minutes"></span>
       <span>:</span>
-      <span class="secons">00</span>
-      <span class="sessions">Am</span>
+      <span class="seconds"></span>
+      <span class="sessions"></span>
     </div>
 
-    <select id="time-zones">
+    <select id="time-element">
       <option value="">Select a city?</option>
       <option value="paris">Paris</option>
       <option value="utah">Utah</option>
