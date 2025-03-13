@@ -1,32 +1,34 @@
+let selectedElement = document.querySelector("#time-element");
+
 function updateCity() {
-   let watchelement = document.querySelector(".watch"); 
-   let selectedCity = document.querySelector("#time-element").value;
-   let time=moment().format("h:mm:ss");
-   if (selectedCity==="nairobi") {
-     time = moment.tz("Africa/Nairobi").format("h:mm:ss a");
-    
-   }if (selectedCity==="paris") {
-    time=moment.tz("Europe/Paris").format("h:mm:ss a");
-    
-   } if (selectedCity=="utah") {
-    time = moment.tz("America/Denver").format("h:mm:ss a");
+  let watchelement = document.querySelector(".watch");
+  let selectedTimezone = document.querySelector("#time-element").value;
+  let cityelement = document.querySelector("#cities");
+  //  let cityDate=moment.tz(timeZone).format("ddd Do MMMM");
+  let year = moment().format("YYYY");
 
-    
-   }if (selectedCity==="cairo") {
+  let selectedCity = selectedElement.value
+    ? selectedElement.selectedOptions[0].text
+    : "Nairobi";
+ 
 
-    time = moment.tz("Africa/Cairo").format("h:mm:ss a");
-    
-   } if (selectedCity==="lagos") {
-    time = moment.tz("Africa/Lagos").format("h:mm:ss a");
+  let timeZone = selectedTimezone ? selectedTimezone : moment.tz.guess();
+  let time = moment.tz(timeZone).format("h:mm:ss a");
+  let cityDate = moment.tz(timeZone).format("ddd Do MMMM");
 
-    
-   }
-   watchelement.innerHTML=time;
-   
+  watchelement.innerHTML = time;
+
+  cityelement.innerHTML = `
+      <div>
+      <h2 class="city">${selectedCity}</h2>
+      <p class="date">${cityDate}</p>
+      </div>
+      <span class="year">${year}</span>
+
+  
+   `;
 }
 
-
-let selectedElement=document.querySelector("#time-element");
-selectedElement.addEventListener("change",updateCity);
+selectedElement.addEventListener("change", updateCity);
 
 setInterval(updateCity, 1000);
