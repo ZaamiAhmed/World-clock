@@ -79,6 +79,7 @@ select{
         font-size: 12px;
     }
     .bodyelement{
-        margin: 0 auto;
+        margin: 10px 15px;
+        height: 60vh;
     }
 }
