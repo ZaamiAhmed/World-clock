@@ -14,13 +14,14 @@ h1{
 }
 footer{
     text-align: center;
-    font-size: 19px;
+    font-size: 23px;
 }
 .bodyelement{
     background-color: #5e575e;
- max-width: 550px;
-    margin: 10px auto;
-    height: 100vh;
+ max-width: 650px;
+ padding: 20px;
+    margin: 40px auto;
+    /* height: 100vh; */
     border-radius: 5px;
 }
 
@@ -49,7 +50,7 @@ select{
     display: flex;
     justify-content: space-between;
     margin: 10px 0;
-    padding: 20px 4px;
+    padding: 20px 0;
     border-bottom: 1px dashed #fff;
 }
 .year{
@@ -75,6 +76,6 @@ select{
 
 @media(max-width:700px){
     footer{
-        font-size: 14px;
+        font-size: 12px;
     }
 }
